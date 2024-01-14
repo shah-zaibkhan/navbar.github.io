@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Poppins:ital,wght@0,500;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+body{
+    background-color: rgb(235, 235, 235);
+}
+
+Nav .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.3rem 4rem;
+    background: #fff;
+}
+Nav .wrapper .left,
+Nav .wrapper .right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+Nav .wrapper .left{
+    padding-left: 3rem;
+    display: flex;
+    gap: 0.7rem;
+}
+Nav .wrapper .logo i{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #0a66c2;
+
+}
+Nav .wrapper .left .input{
+    background: rgb(237, 245, 246);
+    width: 100%;
+    padding: 0.5rem 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0,2rem;
+}
+Nav .wrapper .left .input input{
+    width: 16rem;
+    border: none;
+    background: transparent;
+}
+Nav .wrapper .left .input input ::placeholder{
+    font-size: 0.7rem;
+    color: rgb(49, 49, 49);
+    font-weight: 100;
+    
+}
+Nav .wrapper .left .input i{
+    font-size: 0.8rem;
+    color: grey;
+}
+Nav .wrapper .right .home, .network, .jobs, .message, .notification, .me{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+Nav .wrapper .right .home, .network:hover, .jobs:hover, .message:hover, .notification:hover, .me .down:hover, .work:hover{
+    color: #000;
+    cursor: pointer;
+}
+Nav .wrapper .right .network:hover{
+    color: #000;
+}
+Nav .wrapper .right .me .down:hover{
+    color: #000;
+}
+Nav .wrapper .right .work .down:hover{
+    color: #000;
+    cursor: pointer;
+}
+
+
+Nav .wrapper .right .network, .jobs, .message, .notification{
+    color: grey;
+}
+Nav .wrapper .right .home i, .network i, .jobs i, .message i, .notification i{
+font-size: 1.2rem;
+}
+Nav .wrapper .right .me .down,
+Nav .wrapper .right .work .down{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: grey;
+}
+Nav .wrapper .right .me i:first-child{
+    background: grey;
+    color: #fff;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper a{
+    text-decoration: none;
+    font-size: 0.8rem;
+    width: 7rem;
+    text-align: center;
+    cursor: pointer;
+    color: grey;
+}
+.wrapper a:hover{
+    text-decoration: underline;
+}
+
+        /*=============sidebar=============*/
+
+.container{
+    display: grid;
+    grid-template-columns: 20% 52% 28%;
+    gap: 1.4rem;
+    width: 85%;
+    margin: 1.8rem auto;
+}
+aside .sidebar{
+    background-color: #fff;
+    width: 100%;
+    height: 48vh;
+   position: relative;
+   border-radius: 10px;
+   overflow: hidden;
+}
+.sidebar .top{
+    width: 100%;
+    height: 9vh;
+    background-color: rgb(82, 92, 105);
+    position: absolute;
+}
+.sidebar img{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    top: 3%;
+    border-radius: 50%;
+    width: 4.5rem;
+    height: 4.5rem;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+aside .sidebar .profile{
+    position: relative;
+    text-align: center;
+    top: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    /*border-bottom: 0.5px solid rgb(185, 185, 185);*/
+    height: 10vh;
+    cursor: pointer;
+}
+.sidebar .profile a{
+    text-decoration: none;
+    color: #000;
+}
+.sidebar .profile a:hover{
+    text-decoration: underline;
+}
+.sidebar .profile small{
+    font-size: 0.7rem;
+    color: grey;
+}
+.sidebar .view{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    top: 6%;
+    border-bottom: 1px solid rgb(185, 185, 185);
+}
+.sidebar .view .views{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    font-weight: 100;
+}
+.sidebar .view .views:hover{
+    background-color: rgb(223, 223, 223);
+}
+.sidebar .view .views h6{
+    color: grey
+}
+.sidebar .view .views a{
+    color: rgb(39, 39, 219);
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+.sidebar .premium{
+    position: relative;
+    top: 7%;
+}
+.sidebar .premium h6{
+    color: grey;
+    font-weight: 100;
+    margin-left: 15px;
+}
+.sidebar .premium a{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-size: 0.8rem;
+    color: #000;
+}
+.sidebar .premium a i{
+    color: rgb(213, 213, 33);
+}
+hr#premium{
+    margin: 0.5rem 0;
+}
+.items{
+    position: relative;
+    top: 7%;
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 1rem;
+    color: grey;
+    cursor: pointer;
+
+}
+aside .recent-jobs{
+    background-color: #fff;
+    margin-top: 0.8rem;
+    width: 100%;
+    height: 30vh;
+   position: relative;
+   border-radius: 10px;
+   overflow: hidden;
+}
+
+aside .recent-jobs .recent h6{
+    font-weight: 100;
+    font-size: 15px;
+    margin: 18px;
+   position: relative;
+}
+.discover{
+    text-align: center;
+    margin: 0.8rem 0 0 0;
+}
+.discover a{
+    text-decoration: none;
+    color: grey;
+}
+.discover a:hover{
+    background-color: rgb(223, 223, 223);
+}
+
+        /*=====Main Start=====*/
+main{
+    background-color: #fff;
+    border-radius: 10px;
+    height: 60vh;
+}
+.main-section img{
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+main .media{
+    background: #fff;
+    height: 20vh;
+    margin-top: 1rem;
+    border-radius: 0.8rem;
+}
+main .media .search{
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+}
+main .media .search img{
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;    
+}
+
+main .media .search input{
+    border-radius: 5rem;
+    border: 1px solid grey;
+    width: 100%;
+    padding: 0 0.5rem ;
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+main .media .search input:hover{
+    background: rgb(199, 199, 199);
+
+}
+main .media .posts{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.1rem 1rem;
+}
+main .media .posts .post{
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+    opacity: 0.7;
+}
+main .media .posts .post:nth-child(1) i{
+    color: #0acca2;
+}
+main .media .posts .post:nth-child(2) i{
+    color: #19c20a;
+}
+main .media .posts .post:nth-child(3) i{
+    color: #3187dd;
+}
+main .media .posts .post:nth-child(4) i{
+    color: #c20ab9;
+}
+main .media .posts .post:hover{
+    background: rgb(235, 235, 235);
+    border-radius: 0.2rem;
+}
+
+         /*=====Right Side  Start=====*/
+.right-side{
+    background-color: #fff;
+    border-radius: 0.8rem;
+    height: 62vh;
+    cursor: pointer;
+}
+.right-side .news{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+}
+.right-side .latest-news{
+    padding: 0.5rem 1rem;
+    transition: 0.2s all ease;
+}
+.right-side .latest-news:hover{
+    background: rgb(231, 231, 231);
+}
+.right-side .latest-news .one{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.right-side .latest-news .one h5{
+    font-weight: 500;
+}
+.right-side .latest-news .one i{
+    font-size: 0.5rem;
+    color: grey;
+}
+.right-side .latest-news .two{
+    margin: 0 1.9rem;
+    font-size: 0.8rem;
+    color: grey;
+}
+
+.right-side .show-more{
+    display: flex;
+    gap: 0.5rem;
+    color: grey;
+    align-items: center;
+    margin: 1rem;
+    cursor: pointer;
+}
+.right-side .show-more h5{
+    font-weight: 400;
+}
+    </style>
+</head>
+<body>
+      <!--Navbar-->
+      <Nav>
+        <div class="wrapper">
+            <div class="left">
+            <div class="logo">
+            <i class="fa-brands fa-linkedin"></i>
+        </div>
+        <div class="input">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <img src="/image/download.png" alt="" height="40px">
+
+        </div>
+    </div>
+    <div class="right">
+        <div class="home">
+            <i class="fa-solid fa-house"></i>
+            <h6>Home</h6>
+        </div>
+        <div class="network">
+            <i class="fa-solid fa-user-group"></i>
+            <h6>My Network</h6>
+        </div>
+        <div class="jobs">
+            <i class="fa-solid fa-suitcase"></i>
+            <h6>Jobs</h6>
+        </div>
+        <div class="message">
+            <i class="fa-solid fa-message"></i>
+            <h6>Messaging</h6>
+        </div>
+        <div class="notification">
+            <i class="fa-solid fa-bell"></i>
+            <h6>Notification</h6>
+        </div>
+        <div class="me">
+            <i class="fa-solid fa-user"></i>
+            <div class="down">
+            <h6>Me</h6>
+            <i class="fa-solid fa-angle-down"></i>
+            </div>
+        </div>
+        <div class="work">
+            <i class="fa-solid fa-braille"></i>
+            <div class="down">
+            <h6>Work</h6>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+        </div>
+          <a href="#">Try Premium For Free</a>
+   </div>
+        </div>
+    </Nav>
+    <!--Navbar End-->
+        <div class="container">
+        <aside>
+            <div class="sidebar">
+                <div class="top"></div>
+                <img src="/image/unnamed.jpg" alt="">
+
+            <div class="profile">
+                <a href="#">shah zaib</a>
+                <small>Frontend Web Developer</small>
+                <hr>
+            </div>
+            <div class="view">
+                <div class="views">
+                    <h6>who viewed your profile</h6>
+                    <a href="#">42</a>
+                </div>               
+            </div>
+            <div class="view">
+                <div class="views">
+                    <h6>view of your post</h6>
+                    <a href="#">64</a>                               
+                </div>
+            </div>           
+            <div class="premium">
+                <h6>Access exclusive tools & insights</h6>
+                <a href="#"><i class="fa-solid fa-box"></i>Try Premium For Free</a>
+                <hr id="premium">               
+             </div>
+             <div class="items">
+                <i class="fa-solid fa-bookmark"></i>
+                <h6>My Items</h6>
+             </div>
+        </div>
+
+        <div class="recent-jobs">
+          <div class="recent">
+           <a href="#"><h6>Groups</h6></a>
+           <a href="#"><h6>Events</h6></a>      
+           <a href="#"><h6>Followed Hashtags</h6></a>
+           <hr>
+          </div>
+       <div class="discover">
+        <a href="#">Discover More</a>
+       </div>
+       
+    </div>
+        </aside>
+
+            <!--sidebar End-->
+
+        <main>
+            <div class="main-section">
+                <div class="img"> <img src="/image/download.jpg" alt=""></div>
+            </div>
+            <div class="media">
+                <div class="search">
+                    <img src="/image/unnamed.jpg" alt="">
+                    <input type="search" placeholder="start a post">
+                </div>
+                <div class="posts">
+                    <div class="post">
+                        <i class="fa-solid fa-image"></i>
+                        <h5>Photo</h5>
+                    </div>
+                    <div class="post">
+                        <i class="fa-solid fa-video"></i>
+                        <h5>Video</h5>
+                    </div>
+                    <div class="post">
+                        <i class="fa-solid fa-sack-dollar"></i>
+                    <h5>Job</h5>
+                </div>
+                <div class="post">
+                    <i class="fa-solid fa-pen"></i>
+                    <h5>Write Article</h5>
+                </div>
+            </div>
+            </div>
+        </main>
+            <!--mainsection End-->
+
+        <div class="right-side">
+            <div class="news">
+                <h5>Linkedin News</h5>
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+            <div class="latest-news">
+                <div class="one">
+                <i class="fa-solid fa-circle"></i>
+                <h5>Preparing For Virtual Interview</h5>
+            </div>
+            <div class="two">
+                <small>1d ago</small>
+            </div>
+            </div>
+            <div class="latest-news">
+                <div class="one">
+                <i class="fa-solid fa-circle"></i>
+                <h5>Biden Visits Us Troops In Poland</h5>
+            </div>
+            <div class="two">
+                <small>13hr ago</small>
+            </div>
+            </div>
+            <div class="latest-news">
+                <div class="one">
+                <i class="fa-solid fa-circle"></i>
+                <h5>What Pakistani Customers Are Spending On</h5>
+            </div>
+            <div class="two">
+                <small>3d ago</small>
+            </div>
+            </div>
+            <div class="latest-news">
+                <div class="one">
+                <i class="fa-solid fa-circle"></i>
+                <h5>Create Your Own Career Luck</h5>
+            </div>
+            <div class="two">
+                <small>5d ago</small>
+            </div>
+            </div>
+            <div class="latest-news">
+                <div class="one">
+                <i class="fa-solid fa-circle"></i>
+                <h5>The Latest In The Startup World</h5>
+            </div>
+            <div class="two">
+                <small>2 ago</small>
+            </div>
+            </div>
+            <div class="show-more">
+                <h5>Show More</h5>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+
+        </div>
+        
+
+          <!--rightside End-->
+        
+        </div>
+</body>
+</html>
